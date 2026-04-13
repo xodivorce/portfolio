@@ -1,0 +1,38 @@
+networks:
+  xodivorce-in:
+    driver: bridge
+
+services:
+  db:
+    image: mariadb:10.4
+    container_name: xodivorce-in-db
+    restart: unless-stopped
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+      MYSQL_DATABASE: ${DB_DATABASE:-xodivorce_in}
+    volumes:
+      - ./db_data:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD:-root}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - xodivorce-in
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: xodivorce-in-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "${PMA_PORT:-8081}:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+    depends_on:
+      - db
+    networks:
+      - xodivorce-in

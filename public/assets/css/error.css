@@ -1,0 +1,642 @@
+:root {
+    --eerie-black: #060b14;
+    --pure-white: #ffffff;
+    --neon-sky: #37bbf9;
+    --neon-sky-translucent: rgba(55, 187, 249, 0.2745098039);
+    --neon-sky-glow-weak: rgba(55, 187, 249, 0.18);
+    --neon-sky-glow-mid: rgba(55, 187, 249, 0.28);
+    --neon-sky-pressed: rgba(55, 187, 249, 0.2745098039);
+    --transparent-dark: rgba(6, 11, 20, 0);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transform-style: preserve-3d;
+}
+*:focus {
+    outline: none !important;
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+body {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 12px;
+    background: var(--eerie-black);
+    color: var(--pure-white);
+    font-family: "Lexend Deca", sans-serif;
+    font-feature-settings:
+        "liga",
+        "ss05" on,
+        "ss07" on;
+    font-size: 24px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: none;
+}
+
+.return-btn {
+    font: inherit;
+    background: none;
+    border: none;
+    color: var(--pure-white);
+    text-align: left;
+    cursor: pointer;
+    padding: 0;
+    transition:
+        color 150ms ease,
+        text-shadow 150ms ease,
+        opacity 120ms ease;
+    animation: return-blink 2.4s ease-in-out infinite;
+    animation-play-state: running;
+}
+
+.return-btn:hover,
+.return-btn:focus,
+.return-btn:focus-visible {
+    color: var(--neon-sky);
+    animation: none !important;
+    animation-play-state: paused !important;
+    opacity: 1 !important;
+    text-shadow: 0 0 10px var(--neon-sky-glow-mid);
+    outline: none;
+}
+
+svg {
+    width: 70px;
+    height: auto;
+}
+
+.crack {
+    position: relative;
+    z-index: 4;
+    margin-left: -46px;
+}
+.crack polyline {
+    fill: none;
+    stroke: var(--neon-sky);
+    stroke-width: 10px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1649.099;
+    stroke-dashoffset: 1649.099;
+    animation: drawStroke 1500ms ease-out 500ms forwards;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100vw;
+}
+main > div {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    overflow: hidden;
+}
+main > div svg {
+    position: relative;
+    z-index: 1;
+}
+main > div svg polygon {
+    fill: var(--eerie-black);
+}
+main > div span {
+    display: block;
+    position: relative;
+    z-index: 0;
+    padding: 0 12px;
+    line-height: 1.4;
+}
+main > div:first-child {
+    text-align: right;
+    z-index: 1;
+}
+main > div:first-child span:first-child {
+    opacity: 0;
+    transform: translateX(100%);
+    animation: translateLeft 1000ms linear 1250ms forwards;
+}
+main > div:first-child span:last-child {
+    opacity: 0;
+    transform: translateX(100%);
+    animation: translateLeft 1000ms linear 1450ms forwards;
+}
+main > div:first-child svg polygon {
+    animation: removeFill 10ms ease-out 1600ms forwards;
+}
+main > div:last-child {
+    z-index: 0;
+    margin-left: -50px;
+}
+main > div:last-child span:first-child {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: translateRight 1000ms linear 1650ms forwards;
+}
+main > div:last-child span:last-child {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: translateRight 1000ms linear 1850ms forwards;
+}
+
+@keyframes drawStroke {
+    0% {
+        stroke-dashoffset: 1649.099;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes removeFill {
+    0% {
+        fill: var(--eerie-black);
+    }
+    100% {
+        fill: var(--transparent-dark);
+    }
+}
+
+@keyframes pulseColor {
+    0% {
+        color: var(--pure-white);
+    }
+    25% {
+        color: var(--neon-sky-translucent);
+    }
+    50% {
+        color: var(--pure-white);
+    }
+    75% {
+        color: var(--neon-sky-translucent);
+    }
+    100% {
+        color: var(--pure-white);
+    }
+}
+
+@keyframes translateLeft {
+    0% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 150, 0, 0, 1);
+        opacity: 1;
+    }
+    7.61% {
+        transform: matrix3d(
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            69.561,
+            0,
+            0,
+            1
+        );
+    }
+    11.41% {
+        transform: matrix3d(
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            39.355,
+            0,
+            0,
+            1
+        );
+    }
+    15.12% {
+        transform: matrix3d(
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            17.801,
+            0,
+            0,
+            1
+        );
+    }
+    18.92% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 3.02, 0, 0, 1);
+    }
+    22.72% {
+        transform: matrix3d(
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -5.661,
+            0,
+            0,
+            1
+        );
+    }
+    30.23% {
+        transform: matrix3d(
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -10.852,
+            0,
+            0,
+            1
+        );
+    }
+    50.25% {
+        transform: matrix3d(
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -2.282,
+            0,
+            0,
+            1
+        );
+    }
+    70.27% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0.519, 0, 0, 1);
+    }
+    100% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes translateRight {
+    0% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -150, 0, 0, 1);
+        opacity: 1;
+    }
+    7.61% {
+        transform: matrix3d(
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -69.561,
+            0,
+            0,
+            1
+        );
+    }
+    11.41% {
+        transform: matrix3d(
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -39.355,
+            0,
+            0,
+            1
+        );
+    }
+    15.12% {
+        transform: matrix3d(
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -17.801,
+            0,
+            0,
+            1
+        );
+    }
+    18.92% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -3.02, 0, 0, 1);
+    }
+    22.72% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 5.661, 0, 0, 1);
+    }
+    30.23% {
+        transform: matrix3d(
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            10.852,
+            0,
+            0,
+            1
+        );
+    }
+    50.25% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 2.282, 0, 0, 1);
+    }
+    70.27% {
+        transform: matrix3d(
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            -0.519,
+            0,
+            0,
+            1
+        );
+    }
+    100% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes return-blink {
+    0% {
+        opacity: 1;
+        text-shadow: none;
+    }
+    40% {
+        opacity: 0.62;
+        text-shadow: 0 0 6px #37bbf949;
+    }
+    60% {
+        opacity: 0.92;
+        text-shadow: 0 0 10px #37bbf949;
+    }
+    100% {
+        opacity: 1;
+        text-shadow: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        font-size: 22px;
+        padding: 10px;
+    }
+    svg {
+        width: 64px;
+    }
+    .crack {
+        margin-left: -44px;
+    }
+    main > div:last-child {
+        margin-left: -46px;
+    }
+    main > div span {
+        padding: 0 12px;
+    }
+    .return-btn {
+        font-size: 22px;
+        padding: 4px 0;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 20px;
+        padding: 10px;
+    }
+    svg {
+        width: 58px;
+    }
+    .crack {
+        margin-left: -40px;
+    }
+    main > div:last-child {
+        margin-left: -42px;
+    }
+    main > div span {
+        padding: 0 10px;
+        line-height: 1.35;
+    }
+    .return-btn {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 18px;
+        padding: 10px;
+    }
+    main {
+        transform: scale(1.1);
+    }
+    svg {
+        width: 54px;
+    }
+    .crack {
+        margin-left: -38px;
+    }
+    main > div:last-child {
+        margin-left: -40px;
+    }
+    main > div span {
+        padding: 0 10px;
+        line-height: 1.3;
+    }
+    .return-btn {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 17px;
+        padding: 8px;
+    }
+    main {
+        transform: scale(1.05);
+    }
+    svg {
+        width: 50px;
+    }
+    .crack {
+        margin-left: -36px;
+    }
+    main > div:last-child {
+        margin-left: -38px;
+    }
+    main > div span {
+        padding: 0 8px;
+        line-height: 1.3;
+    }
+    .return-btn {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        font-size: 16px;
+        padding: 8px;
+    }
+    main {
+        transform: scale(1);
+    }
+    svg {
+        width: 46px;
+    }
+    .crack {
+        margin-left: -34px;
+    }
+    main > div:last-child {
+        margin-left: -36px;
+    }
+    main > div span {
+        padding: 0 8px;
+        line-height: 1.25;
+    }
+    .return-btn {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        font-size: 15px;
+        padding: 6px;
+    }
+    main {
+        transform: scale(0.95);
+    }
+    svg {
+        width: 42px;
+    }
+    .crack {
+        margin-left: -32px;
+    }
+    main > div:last-child {
+        margin-left: -34px;
+    }
+    main > div span {
+        padding: 0 6px;
+        line-height: 1.25;
+    }
+    .return-btn {
+        font-size: 15px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        font-size: 14px;
+        padding: 6px;
+    }
+    main {
+        transform: scale(0.85);
+    }
+    svg {
+        width: 38px;
+    }
+    .crack {
+        margin-left: -28px;
+    }
+    main > div:last-child {
+        margin-left: -30px;
+    }
+}
