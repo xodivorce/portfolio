@@ -6,7 +6,7 @@
 ### Official Portfolio Website of Prasid Mandal - Full-Stack Web Developer - (Also Known as @xodivorce).
 
 [![status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)](https://github.com/xodivorce/portfolio)
-[![version](https://img.shields.io/badge/version-v1.0.0-yellow.svg?style=flat)](https://github.com/xodivorce/portfolio)
+[![version](https://img.shields.io/badge/version-v1.1.0-yellow.svg?style=flat)](https://github.com/xodivorce/portfolio)
 [![PRs](https://img.shields.io/badge/PRs-welcome-blue.svg?style=flat)](https://github.com/xodivorce/portfolio)
 
 > **🥰 Like this project? Please consider giving it a Star (🌟) on GitHub to show us your appreciation. Thank you!**
@@ -50,6 +50,7 @@ Want to get started quickly? Follow the instructions below to install and run th
      ```bash
      # Using Terminal
      composer install
+     npm install
      ```
 
 3. **Configure Environment & Database**
