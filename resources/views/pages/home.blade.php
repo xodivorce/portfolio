@@ -30,11 +30,11 @@
         ];
 
         $ogDescriptions = [
-            'about' => 'Official Portfolio Website of Prasid Mandal — Full-Stack Web Developer - (Also Known as @' . config('app.name') . ').',
-            'resume' => 'Explore the Resume: cv@' . config('app.name') . ' — A Quick Look at My Education, Experience, and Skills.',
-            'projects' => 'Browse the Projects — A Quick Overview of My Work, Tools, and Real-World Applications.',
+            'about' => 'Official Portfolio Website of Prasid Mandal - Full-Stack Web Developer - (Also Known as @' . config('app.name') . ').',
+            'resume' => 'Explore the Resume: cv@' . config('app.name') . ' - A Quick Look at My Education, Experience, and Skills.',
+            'projects' => 'Browse the Projects - A Quick Overview of My Work, Tools, and Real-World Applications.',
             'blog' => 'Read the Blogs Shared by ' . config('app.name') . ' on Social Media, Development and Tech.',
-            'contact' => 'Get in Touch with ' . config('app.name') . ' — for Collaborations, Projects, or Queries.',
+            'contact' => 'Get in Touch with ' . config('app.name') . ' - for Collaborations, Projects, or Queries.',
         ];
 
         $homeTitle = $titles[$currentPage] . ' | @' . config('app.name');
@@ -72,6 +72,7 @@
   -->
 
     <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/preloader.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!--

@@ -21,7 +21,7 @@
 
     $cvTitle = 'Curriculum Vitae | @' . config('app.name');
 
-    $cvDescription = 'Explore the CV: cv@' . config('app.name') . ' — A Detailed Look at the Skills, Experience, and Education.';
+    $cvDescription = 'Explore the CV: cv@' . config('app.name') . ' - A Detailed Look at the Skills, Experience, and Education.';
 
   @endphp
 
@@ -57,10 +57,13 @@
   -->
 
   <link rel="stylesheet" href="{{ asset('assets/css/cv-viewer.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
 
 </head>
 
 <body>
+
+      @include('components.ui.preloader')
 
   <!--
     - #Content
@@ -69,5 +72,11 @@
   <iframe src="{{ asset('assets/pdf/' . $file) }}#toolbar=1&navpanes=0&scrollbar=1&view=FitH"></iframe>
 
 </body>
+
+ <!--
+    - #Scripts
+  -->
+
+    <script src="{{ asset('assets/js/preloader_config.js') }}"></script>
 
 </html>

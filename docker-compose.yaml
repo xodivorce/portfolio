@@ -1,17 +1,17 @@
 networks:
-  xodivorce-in:
+  portfolio:
     driver: bridge
 
 services:
   db:
     image: mariadb:10.4
-    container_name: xodivorce-in-db
+    container_name: portfolio-db
     restart: unless-stopped
     ports:
       - "${MYSQL_PORT:-3306}:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
-      MYSQL_DATABASE: ${DB_DATABASE:-xodivorce_in}
+      MYSQL_DATABASE: ${DB_DATABASE:-portfolio}
     volumes:
       - ./db_data:/var/lib/mysql
     healthcheck:
@@ -20,11 +20,11 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - xodivorce-in
+      - portfolio
 
   phpmyadmin:
     image: phpmyadmin:latest
-    container_name: xodivorce-in-phpmyadmin
+    container_name: portfolio-phpmyadmin
     restart: unless-stopped
     ports:
       - "${PMA_PORT:-8081}:80"
@@ -35,4 +35,4 @@ services:
     depends_on:
       - db
     networks:
-      - xodivorce-in
+      - portfolio
