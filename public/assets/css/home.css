@@ -606,7 +606,7 @@ main {
     line-height: 1.6;
 }
 
-.npx-cli {
+.link-button {
     color: var(--vegas-gold);
     display: inline;
     cursor: pointer;

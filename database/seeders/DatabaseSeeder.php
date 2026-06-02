@@ -86,9 +86,21 @@ class DatabaseSeeder extends Seeder
         //Experience::factory(5)->create();
         Experience::insert([
             [
-                'title' => 'GeeksforGeeks Campus Ambassador (Campus Mantri)',
+                'title' => "Google Gemini Student Ambassador '26",
                 'start_year' => 2026,
                 'end_year' => null,
+                'description' => 'Selected as a Google Gemini Student Ambassador, representing Google Gemini and developer initiatives within the student community. Organizing workshops, technical sessions, and campus activities while helping students explore modern technologies, AI tools, and developer resources.'
+            ],
+            [
+                'title' => "GirlScript Summer of Code '26",
+                'start_year' => 2026,
+                'end_year' => null,
+                'description' => 'Contributing to open-source projects as part of GirlScript Summer of Code 2026 (GSSoC). Collaborating with maintainers and contributors, improving real-world projects, and gaining hands-on experience with modern development workflows and Git-based collaboration.'
+            ],
+            [
+                'title' => 'GeeksforGeeks Campus Ambassador (Campus Mantri)',
+                'start_year' => 2025,
+                'end_year' => 2026,
                 'description' => 'Representing GeeksforGeeks as the official Campus Mantri at Camellia Institute of Technology (CIT), Kolkata. Mentoring students in DSA, web development, and career preparation. Organizing workshops, coding initiatives, and technical sessions to foster a strong problem-solving and learning culture on campus.'
             ],
             [
@@ -618,7 +630,7 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => now()
                 ],
                 [
-                    'post_link' => 'https://www.instagram.com/p/DUDPPikklvu/?img_index=1',
+                    'post_link' => 'https://www.instagram.com/p/DUDPPikklvu/',
                     'post_image' => null,
                     'post_image_alt' => 'U da real love ❤️‍🩹',
                     'post_category' => 'Instagram',
@@ -631,7 +643,7 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => now()
                 ],
                 [
-                    'post_link' => 'https://www.instagram.com/p/DUOYFRBEq-R/?img_index=1',
+                    'post_link' => 'https://www.instagram.com/p/DUOYFRBEq-R/',
                     'post_image' => null,
                     'post_image_alt' => 'A day at GFG Kolkata 🏢',
                     'post_category' => 'Instagram',
@@ -644,7 +656,7 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => now()
                 ],
                 [
-                    'post_link' => 'https://www.instagram.com/p/DUdF6BJEvns/?img_index=1',
+                    'post_link' => 'https://www.instagram.com/p/DUdF6BJEvns/',
                     'post_image' => null,
                     'post_image_alt' => 'Last night, unforgettable 🎸',
                     'post_category' => 'Instagram',
@@ -657,7 +669,7 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => now()
                 ],
                 [
-                    'post_link' => 'https://www.instagram.com/p/DVjPepLkl5C/?img_index=1',
+                    'post_link' => 'https://www.instagram.com/p/DVjPepLkl5C/',
                     'post_image' => null,
                     'post_image_alt' => 'She’s the colour :)',
                     'post_category' => 'Instagram',
@@ -670,7 +682,7 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => now()
                 ],
                 [
-                    'post_link' => 'https://www.instagram.com/p/DWrYsG6ki-5/?img_index=1',
+                    'post_link' => 'https://www.instagram.com/p/DWrYsG6ki-5/',
                     'post_image' => null,
                     'post_image_alt' => 'You just need a haircut! 🫪',
                     'post_category' => 'Instagram',
@@ -683,7 +695,7 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => now()
                 ],
                 [
-                    'post_link' => 'https://www.instagram.com/p/DW6PBlXEgKQ/?img_index=1',
+                    'post_link' => 'https://www.instagram.com/p/DW6PBlXEgKQ/',
                     'post_image' => null,
                     'post_image_alt' => 'I didn’t know what I was looking for ~ 🫪',
                     'post_category' => 'Instagram',
@@ -709,13 +721,130 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => now()
                 ],
                 [
-                    'post_link' => 'https://www.instagram.com/p/DXlc_cwkmRQ/?img_index=1',
+                    'post_link' => 'https://www.instagram.com/p/DXlc_cwkmRQ/',
                     'post_image' => null,
                     'post_image_alt' => 'Day 1 @amd Slingshot Ideation ⚡️',
                     'post_category' => 'Instagram',
                     'post_date' => '2026-04-26',
                     'post_title' => 'Day 1 @amd Slingshot Ideation ⚡️',
                     'post_text' => "Explored vibe coding with Google's Antigravity ✨ and later took part in a Prompt-a-thon at Future Institute of Engineering and Management, Kolkata 🚀.",
+                    'platform' => 'Instagram',
+                    'post_iframe' => null,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'post_link' => 'https://www.instagram.com/p/DYIY3BxkgiR/',
+                    'post_image' => null,
+                    'post_image_alt' => "A L E G R I A '26 x DC 🎸",
+                    'post_category' => 'Instagram',
+                    'post_date' => '2026-05-8',
+                    'post_title' => "A L E G R I A '26 x DC 🎸",
+                    'post_text' => "Captured one of my favorite moments from the A L E G R I A '26 at Camellia Institute of Technology, featuring an electrifying live performance by Distorted Chromosomes. A night filled with music, energy, and unforgettable memories through iPhone 16. 📸✨",
+                    'platform' => 'Instagram',
+                    'post_iframe' => null,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'post_link' => 'https://www.instagram.com/reel/DYHzqZhSxs1/',
+                    'post_image' => null,
+                    'post_image_alt' => "Phir Kabhi @ DC at A L E G R I A 🍃",
+                    'post_category' => 'Instagram',
+                    'post_date' => '2026-05-08',
+                    'post_title' => "Phir Kabhi @ A L E G R I A 🍃",
+                    'post_text' => "A special moment from A L E G R I A '26 as Distorted Chromosomes performed 'Phir Kabhi' live on stage. Hearing unreleased music in front of a live audience made the experience even more memorable. ⚡🎸",
+                    'platform' => 'Instagram',
+                    'post_iframe' => null,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'post_link' => 'https://www.instagram.com/reel/DYKK1O9xJoV/',
+                    'post_image' => null,
+                    'post_image_alt' => "A L E G R I A, Memories ✨",
+                    'post_category' => 'Instagram',
+                    'post_date' => '2026-05-10',
+                    'post_title' => "A L E G R I A, Memories ✨",
+                    'post_text' => "My first ALEGRIA at Camellia Institute of Technology, yet it gave me memories that will stay forever. A night filled with music, friendships, and moments that reminded us how quickly time passes. ❤️✨",
+                    'platform' => 'Instagram',
+                    'post_iframe' => null,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'post_link' => 'https://www.instagram.com/p/DYNXarKEghf/',
+                    'post_image' => null,
+                    'post_image_alt' => 'Korean Stadium AI Trend',
+                    'post_category' => 'Instagram',
+                    'post_date' => '2026-05-12',
+                    'post_title' => 'Why Not? 🇰🇷✨',
+                    'post_text' => 'Joined the viral Korean stadium AI trend just for fun. Sometimes all it takes is a good photo, a little AI, and a curiosity to see what happens. Why not be the main character for a day? 😄✨ Living the K-drama moment. 🇰🇷',
+                    'platform' => 'Instagram',
+                    'post_iframe' => null,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'post_link' => 'https://www.instagram.com/reel/DY0MfF4zDad/',
+                    'post_image' => null,
+                    'post_image_alt' => 'Building With Gemini',
+                    'post_category' => 'Instagram',
+                    'post_date' => '2026-05-26',
+                    'post_title' => 'Building Thoughts With Gemini 💙✨',
+                    'post_text' => 'From coding to creativity, Gemini has become part of my daily workflow. Helping me learn faster, think deeper, and turn ideas into reality one prompt at a time. 💙✨',
+                    'platform' => 'Instagram',
+                    'post_iframe' => null,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'post_link' => 'https://www.instagram.com/p/DYwbjbiEpiV/',
+                    'post_image' => null,
+                    'post_image_alt' => 'KKR vs DC at Eden Gardens',
+                    'post_category' => 'Instagram',
+                    'post_date' => '2026-05-24',
+                    'post_title' => 'KKR Forever At Eden Gardens 💜🏏',
+                    'post_text' => 'Just weeks after becoming a Google Student Ambassador, I got the chance to watch KKR vs DC at Eden Gardens through Google India. The result hurt, but the experience was unforgettable. 💜🏏',
+                    'platform' => 'Instagram',
+                    'post_iframe' => null,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'post_link' => 'https://www.instagram.com/reel/DYxWluKyrs_/',
+                    'post_image' => null,
+                    'post_image_alt' => 'One Last Match Before Life Gets Serious!! 🏏',
+                    'post_category' => 'Instagram',
+                    'post_date' => '2026-05-24',
+                    'post_title' => 'One Last Match Before Life Gets Serious!! 🏏',
+                    'post_text' => 'A glimpse from KKR vs DC at Eden Gardens. One last carefree evening before life gets a little more serious, filled with cricket, memories, and the electric atmosphere only Eden can offer. 💜🏏✨',
+                    'platform' => 'Instagram',
+                    'post_iframe' => null,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'post_link' => 'https://www.instagram.com/reel/DYfwoc7Sf90/',
+                    'post_image' => null,
+                    'post_image_alt' => 'Google Student Ambassador 2026',
+                    'post_category' => 'Instagram',
+                    'post_date' => '2026-05-19',
+                    'post_title' => 'Google Student Ambassador 2026 💙',
+                    'post_text' => 'One of the biggest milestones of my journey - being selected for the Google Student Ambassador Program 2026. Grateful to Google India for this opportunity and excited to learn, build, and grow with the community. 💙✨',
+                    'platform' => 'Instagram',
+                    'post_iframe' => null,
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ],
+                [
+                    'post_link' => 'https://www.instagram.com/p/DZDkr4mkuM3',
+                    'post_image' => null,
+                    'post_image_alt' => 'Former Love @ Kolkata ♥️✨',
+                    'post_category' => 'Instagram',
+                    'post_date' => '2026-06-01',
+                    'post_title' => 'Former Love @ Kolkata ♥️✨',
+                    'post_text' => 'With a former love, at the former capital of India, Kolkata. Some places hold memories long after people become part of the past. A city of nostalgia, stories, and moments that quietly stay with you. ✈️🌆',
                     'platform' => 'Instagram',
                     'post_iframe' => null,
                     'created_at' => now(),
