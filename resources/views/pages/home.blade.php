@@ -345,16 +345,16 @@
                     <p>
                         Namaste! I'm Prasid,
                         better known as {{ '@' . (config('app.name')) }} - a {{ $age }}-year-old Full Stack Web Developer, Technology Enthusiast,
-                        <button type="button" class="link-button" onclick="window.open('https://geministudentambassador.com/', '_blank', 'noopener,noreferrer')">Google Student Ambassador '26</button> at
-                        <button type="button" class="link-button" onclick="window.open('https://camelliait.ac.in/', '_blank', 'noopener,noreferrer')">Camellia Institute of Technology</button>,
-                        and an Open Source Contributor at <button type="button" class="link-button" onclick="window.open('https://gssoc.girlscript.org/', '_blank', 'noopener,noreferrer')">GSSoC '26</button>.
+                        <button type="button" class="npx-cli" onclick="window.open('https://geministudentambassador.com/', '_blank', 'noopener,noreferrer')">Google Student Ambassador '26</button> at
+                        <button type="button" class="npx-cli" onclick="window.open('https://camelliait.ac.in/', '_blank', 'noopener,noreferrer')">Camellia Institute of Technology</button>,
+                        and an Open Source Contributor at <button type="button" class="npx-cli" onclick="window.open('https://gssoc.girlscript.org/', '_blank', 'noopener,noreferrer')">GSSoC '26</button>.
                     </p>
 
                     <p>
                         For over 3+ years, I've been building modern web applications, exploring AI-powered solutions, and working with modern technologies and frameworks including Laravel, Tailwind CSS, MySQL and Docker
                         - adding handcrafted touches to every pixel I've placed. Building things is what I do, exploring them is up to you. Run:
-                        <button type="button" class="link-button"
-                            onclick="navigator.clipboard.writeText(@js('npx ' . config('app.name'))).then(() => { this.textContent = 'Copied to Clipboard!'; setTimeout(() => this.textContent = '$ npx {{ config('app.name') }}', 1200); });">
+                        <button type="button" class="npx-cli"
+                            onclick="navigator.clipboard.writeText(@js('npx ' . config('app.name'))).then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = '$ npx {{ config('app.name') }}', 1200); });">
                             $ npx {{ config('app.name') }}
                         </button>
                     </p>

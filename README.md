@@ -6,7 +6,7 @@
 ### Official Portfolio Website of Prasid Mandal - Full-Stack Web Developer - (Also Known as @xodivorce).
 
 [![status](https://img.shields.io/badge/status-active-brightgreen.svg?style=flat)](https://github.com/xodivorce/portfolio)
-[![version](https://img.shields.io/badge/version-v1.2.0-yellow.svg?style=flat)](https://github.com/xodivorce/portfolio)
+[![version](https://img.shields.io/badge/version-v1.2.1-yellow.svg?style=flat)](https://github.com/xodivorce/portfolio)
 [![PRs](https://img.shields.io/badge/PRs-welcome-blue.svg?style=flat)](https://github.com/xodivorce/portfolio)
 
 > **🥰 Like this project? Please consider giving it a Star (🌟) on GitHub to show us your appreciation. Thank you!**
