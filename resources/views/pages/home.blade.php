@@ -19,25 +19,25 @@
 
     @php
 
-    $currentPage = $page ?? 'about';
+        $currentPage = $page ?? 'about';
 
-    $titles = [
-    'about' => 'Portfolio',
-    'resume' => 'Resume',
-    'projects' => 'Projects',
-    'blog' => 'Blog',
-    'contact' => 'Contact',
-    ];
+        $titles = [
+            'about' => 'Portfolio',
+            'resume' => 'Resume',
+            'projects' => 'Projects',
+            'blog' => 'Blog',
+            'contact' => 'Contact',
+        ];
 
-    $ogDescriptions = [
-    'about' => 'Official Portfolio Website of Prasid Mandal - Full-Stack Web Developer - (Also Known as @' . config('app.name') . ').',
-    'resume' => 'Explore the Resume: cv@' . config('app.name') . ' - A Quick Look at My Education, Experience, and Skills.',
-    'projects' => 'Browse the Projects - A Quick Overview of My Work, Tools, and Real-World Applications.',
-    'blog' => 'Read the Blogs Shared by ' . config('app.name') . ' on Social Media, Development and Tech.',
-    'contact' => 'Get in Touch with ' . config('app.name') . ' - for Collaborations, Projects, or Queries.',
-    ];
+        $ogDescriptions = [
+            'about' => 'Official Portfolio Website of Prasid Mandal - Full-Stack Web Developer - (Also Known as @' . config('app.name') . ').',
+            'resume' => 'Explore the Resume: cv@' . config('app.name') . ' - A Quick Look at My Education, Experience, and Skills.',
+            'projects' => 'Browse the Projects - A Quick Overview of My Work, Tools, and Real-World Applications.',
+            'blog' => 'Read the Blogs Shared by ' . config('app.name') . ' on Social Media, Development and Tech.',
+            'contact' => 'Get in Touch with ' . config('app.name') . ' - for Collaborations, Projects, or Queries.',
+        ];
 
-    $homeTitle = $titles[$currentPage] . ' | @' . config('app.name');
+        $homeTitle = $titles[$currentPage] . ' | @' . config('app.name');
 
     @endphp
 
@@ -91,6 +91,8 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    @include('components.seo.schema')
 
 </head>
 
@@ -212,7 +214,7 @@
                         <div class="contact-info">
 
                             <p class="contact-title">Based On</p>
-                            <address>Kolkata, India</address>
+                            <address>Basirhat, India</address>
 
                         </div>
                     </li>
@@ -333,26 +335,36 @@
                     </header>
 
                     @php
-                    use Carbon\Carbon;
+                        use Carbon\Carbon;
 
-                    $birthDate = Carbon::parse('2006-01-20');
-                    $age = $birthDate->age;
+                        $birthDate = Carbon::parse('2006-01-20');
+                        $age = $birthDate->age;
 
-                    $experienceStartYear = 2023;
-                    $experienceYears = now()->year - $experienceStartYear;
+                        $experienceStartYear = 2023;
+                        $experienceYears = now()->year - $experienceStartYear;
                     @endphp
 
                     <p>
                         Namaste! I'm Prasid,
-                        better known as {{ '@' . (config('app.name')) }} - a {{ $age }}-year-old Full Stack Web Developer, Technology Enthusiast,
-                        <button type="button" class="npx-cli" onclick="window.open('https://geministudentambassador.com/', '_blank', 'noopener,noreferrer')">Google Student Ambassador '26</button> at
-                        <button type="button" class="npx-cli" onclick="window.open('https://camelliait.ac.in/', '_blank', 'noopener,noreferrer')">Camellia Institute of Technology</button>,
-                        and an Open Source Contributor at <button type="button" class="npx-cli" onclick="window.open('https://gssoc.girlscript.org/', '_blank', 'noopener,noreferrer')">GSSoC '26</button>.
+                        better known as {{ '@' . (config('app.name')) }} - a {{ $age }}-year-old Full Stack Web
+                        Developer, Technology Enthusiast,
+                        <button type="button" class="npx-cli"
+                            onclick="window.open('https://geministudentambassador.com/', '_blank', 'noopener,noreferrer')">Google
+                            Student Ambassador '26</button> at
+                        <button type="button" class="npx-cli"
+                            onclick="window.open('https://camelliait.ac.in/', '_blank', 'noopener,noreferrer')">Camellia
+                            Institute of Technology</button>,
+                        and an Open Source Contributor at <button type="button" class="npx-cli"
+                            onclick="window.open('https://gssoc.girlscript.org/', '_blank', 'noopener,noreferrer')">GSSoC
+                            '26</button>.
                     </p>
 
                     <p>
-                        For over 3+ years, I've been building modern web applications, exploring AI-powered solutions, and working with modern technologies and frameworks including Laravel, Tailwind CSS, MySQL and Docker
-                        - adding handcrafted touches to every pixel I've placed. Building things is what I do, exploring them is up to you. Run:
+                        For over 3+ years, I've been building modern web applications, exploring AI-powered solutions,
+                        and working with modern technologies and frameworks including Laravel, Tailwind CSS, MySQL and
+                        Docker
+                        - adding handcrafted touches to every pixel I've placed. Building things is what I do, exploring
+                        them is up to you. Run:
                         <button type="button" class="npx-cli"
                             onclick="navigator.clipboard.writeText(@js('npx ' . config('app.name'))).then(() => { this.textContent = 'Copied!'; setTimeout(() => this.textContent = '$ npx {{ config('app.name') }}', 1200); });">
                             $ npx {{ config('app.name') }}
@@ -451,28 +463,28 @@
                         <ul class="words_by_them-list has-scrollbar">
 
                             @foreach($testimonials as $t)
-                            <li class="words_by_them-item" data-words_by_them-item data-name="{{ $t->name }}"
-                                data-message="{{ e($t->message) }}" data-date="{{ $t->date }}">
+                                <li class="words_by_them-item" data-words_by_them-item data-name="{{ $t->name }}"
+                                    data-message="{{ e($t->message) }}" data-date="{{ $t->date }}">
 
-                                <div class="content-card" data-model-trigger>
-                                    <figure class="words_by_them-avatar-box">
-                                        <img src="{{ asset($t->avatar) }}" alt="{{ $t->name }}" width="60"
-                                            data-words_by_them-avatar>
-                                    </figure>
+                                    <div class="content-card" data-model-trigger>
+                                        <figure class="words_by_them-avatar-box">
+                                            <img src="{{ asset($t->avatar) }}" alt="{{ $t->name }}" width="60"
+                                                data-words_by_them-avatar>
+                                        </figure>
 
-                                    <h4 class="h4 words_by_them-item-title" data-words_by_them-title>
-                                        {{ $t->name }}
-                                    </h4>
+                                        <h4 class="h4 words_by_them-item-title" data-words_by_them-title>
+                                            {{ $t->name }}
+                                        </h4>
 
-                                    <time datetime="{{ $t->date }}">
-                                        {{ \Carbon\Carbon::parse($t->date)->format('d F, Y') }}
-                                    </time>
+                                        <time datetime="{{ $t->date }}">
+                                            {{ \Carbon\Carbon::parse($t->date)->format('d F, Y') }}
+                                        </time>
 
-                                    <div class="words_by_them-text" data-words_by_them-text>
-                                        <p>{{ $t->message }}</p>
+                                        <div class="words_by_them-text" data-words_by_them-text>
+                                            <p>{{ $t->message }}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
                             @endforeach
 
                         </ul>
@@ -570,13 +582,13 @@
                         <ol class="timeline-list">
 
                             @foreach($educations as $edu)
-                            <li class="timeline-item">
-                                <h4 class="h4 timeline-item-title">{{ $edu->title }}</h4>
-                                <span>{{ $edu->start_year }} — {{ $edu->end_year }}</span>
-                                <p class="timeline-text">
-                                    {!! $edu->description !!}
-                                </p>
-                            </li>
+                                <li class="timeline-item">
+                                    <h4 class="h4 timeline-item-title">{{ $edu->title }}</h4>
+                                    <span>{{ $edu->start_year }} — {{ $edu->end_year }}</span>
+                                    <p class="timeline-text">
+                                        {!! $edu->description !!}
+                                    </p>
+                                </li>
                             @endforeach
 
                         </ol>
@@ -595,17 +607,17 @@
                         <ol class="timeline-list">
 
                             @foreach($experience as $exp)
-                            <li class="timeline-item">
-                                <h4 class="h4 timeline-item-title">{{ $exp->title }}</h4>
+                                <li class="timeline-item">
+                                    <h4 class="h4 timeline-item-title">{{ $exp->title }}</h4>
 
-                                <span>
-                                    {{ $exp->start_year }} — {{ $exp->end_year ?? 'Present' }}
-                                </span>
+                                    <span>
+                                        {{ $exp->start_year }} — {{ $exp->end_year ?? 'Present' }}
+                                    </span>
 
-                                <p class="timeline-text">
-                                    {!! $exp->description !!}
-                                </p>
-                            </li>
+                                    <p class="timeline-text">
+                                        {!! $exp->description !!}
+                                    </p>
+                                </li>
                             @endforeach
 
                         </ol>
@@ -623,16 +635,16 @@
                         <ul class="skills-list content-card">
 
                             @foreach($skills as $skill)
-                            <li class="skills-item">
-                                <div class="title-wrapper">
-                                    <h5 class="h5">{{ $skill->name }}</h5>
-                                    <data value="{{ $skill->percentage }}">{{ $skill->percentage }}%</data>
-                                </div>
-                                <div class="skill-progress-bg">
-                                    <div class="skill-progress-fill" style="width: {{ $skill->percentage }}%;">
+                                <li class="skills-item">
+                                    <div class="title-wrapper">
+                                        <h5 class="h5">{{ $skill->name }}</h5>
+                                        <data value="{{ $skill->percentage }}">{{ $skill->percentage }}%</data>
                                     </div>
-                                </div>
-                            </li>
+                                    <div class="skill-progress-bg">
+                                        <div class="skill-progress-fill" style="width: {{ $skill->percentage }}%;">
+                                        </div>
+                                    </div>
+                                </li>
                             @endforeach
 
                         </ul>
@@ -712,31 +724,31 @@
 
                             @foreach ($projects as $project)
 
-                            <li class="project-item active" data-filter-item
-                                data-category="{{ strtolower($project->category) }}">
+                                <li class="project-item active" data-filter-item
+                                    data-category="{{ strtolower($project->category) }}">
 
-                                <a href="{{ $project->link }}" target="_blank" rel="noopener noreferrer"
-                                    style="display:block;">
+                                    <a href="{{ $project->link }}" target="_blank" rel="noopener noreferrer"
+                                        style="display:block;">
 
-                                    <figure class="project-img">
-                                        <div class="project-item-icon-box">
-                                            <ion-icon name="eye-outline"></ion-icon>
-                                        </div>
+                                        <figure class="project-img">
+                                            <div class="project-item-icon-box">
+                                                <ion-icon name="eye-outline"></ion-icon>
+                                            </div>
 
-                                        <img src="{{ asset($project->image) }}" alt="{{ $project->name }}"
-                                            loading="lazy">
-                                    </figure>
+                                            <img src="{{ asset($project->image) }}" alt="{{ $project->name }}"
+                                                loading="lazy">
+                                        </figure>
 
-                                    <h3 class="project-title">
-                                        {{ $project->name }}
-                                    </h3>
+                                        <h3 class="project-title">
+                                            {{ $project->name }}
+                                        </h3>
 
-                                    <p class="project-category">
-                                        {{ $project->category }}
-                                    </p>
+                                        <p class="project-category">
+                                            {{ $project->category }}
+                                        </p>
 
-                                </a>
-                            </li>
+                                    </a>
+                                </li>
 
                             @endforeach
 
@@ -773,74 +785,74 @@
 
                             @foreach ($blogs as $row)
 
-                            <li class="blog-post-item">
+                                <li class="blog-post-item">
 
-                                <a href="{{ $row['post_link'] }}" target="_blank" rel="noopener noreferrer"
-                                    style="display:block;">
+                                    <a href="{{ $row['post_link'] }}" target="_blank" rel="noopener noreferrer"
+                                        style="display:block;">
 
-                                    <figure class="blog-banner-box">
+                                        <figure class="blog-banner-box">
 
-                                        {{-- Instagram --}}
-                                        @if ($row['platform'] === 'Instagram')
+                                            {{-- Instagram --}}
+                                            @if ($row['platform'] === 'Instagram')
 
-                                        <blockquote class="instagram-media"
-                                            data-instgrm-permalink="{{ $row['post_link'] }}" data-instgrm-version="14"
-                                            style="width:100%;">
-                                        </blockquote>
-                                        <script async src="//www.instagram.com/embed.js"></script>
+                                                <blockquote class="instagram-media"
+                                                    data-instgrm-permalink="{{ $row['post_link'] }}" data-instgrm-version="14"
+                                                    style="width:100%;">
+                                                </blockquote>
+                                                <script async src="//www.instagram.com/embed.js"></script>
 
-                                        {{-- Facebook --}}
-                                        @elseif ($row['platform'] === 'Facebook' && !empty($row['post_iframe']))
+                                                {{-- Facebook --}}
+                                            @elseif ($row['platform'] === 'Facebook' && !empty($row['post_iframe']))
 
-                                        <iframe src="{{ $row['post_iframe'] }}" width="100%" height="365"
-                                            style="border:none;overflow:hidden;" scrolling="no" frameborder="0"
-                                            allowfullscreen="true">
-                                        </iframe>
+                                                <iframe src="{{ $row['post_iframe'] }}" width="100%" height="365"
+                                                    style="border:none;overflow:hidden;" scrolling="no" frameborder="0"
+                                                    allowfullscreen="true">
+                                                </iframe>
 
-                                        {{-- Pinterest --}}
-                                        @elseif ($row['platform'] === 'Pinterest' && !empty($row['post_iframe']))
+                                                {{-- Pinterest --}}
+                                            @elseif ($row['platform'] === 'Pinterest' && !empty($row['post_iframe']))
 
-                                        <iframe src="{{ $row['post_iframe'] }}" height="365" width="100%"
-                                            frameborder="0" scrolling="no"></iframe>
+                                                <iframe src="{{ $row['post_iframe'] }}" height="365" width="100%"
+                                                    frameborder="0" scrolling="no"></iframe>
 
-                                        {{-- Default --}}
-                                        @else
+                                                {{-- Default --}}
+                                            @else
 
-                                        <img src="{{ $row['post_image'] }}" alt="{{ $row['post_image_alt'] }}"
-                                            loading="lazy">
+                                                <img src="{{ $row['post_image'] }}" alt="{{ $row['post_image_alt'] }}"
+                                                    loading="lazy">
 
-                                        @endif
+                                            @endif
 
-                                    </figure>
+                                        </figure>
 
-                                    <div class="blog-content">
-                                        <div class="blog-meta">
+                                        <div class="blog-content">
+                                            <div class="blog-meta">
 
-                                            <p class="blog-category">
-                                                {{ $row['post_category'] }}
+                                                <p class="blog-category">
+                                                    {{ $row['post_category'] }}
+                                                </p>
+
+                                                <span class="dot"></span>
+
+                                                <time datetime="{{ $row['post_date'] }}">
+                                                    {{ \Carbon\Carbon::parse($row['post_date'])->format('M d, Y') }}
+                                                </time>
+
+                                            </div>
+
+                                            <h3 class="h3 blog-item-title">
+                                                {{ $row['post_title'] }}
+                                            </h3>
+
+                                            <p class="blog-text">
+                                                {!! $row['post_text'] !!}
                                             </p>
-
-                                            <span class="dot"></span>
-
-                                            <time datetime="{{ $row['post_date'] }}">
-                                                {{ \Carbon\Carbon::parse($row['post_date'])->format('M d, Y') }}
-                                            </time>
 
                                         </div>
 
-                                        <h3 class="h3 blog-item-title">
-                                            {{ $row['post_title'] }}
-                                        </h3>
+                                    </a>
 
-                                        <p class="blog-text">
-                                            {!! $row['post_text'] !!}
-                                        </p>
-
-                                    </div>
-
-                                </a>
-
-                            </li>
+                                </li>
 
                             @endforeach
 

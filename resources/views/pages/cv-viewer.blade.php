@@ -63,7 +63,7 @@
 
 <body>
 
-      @include('components.ui.preloader')
+  @include('components.ui.preloader')
 
   <!--
     - #Content
@@ -73,10 +73,10 @@
 
 </body>
 
- <!--
+<!--
     - #Scripts
   -->
 
-    <script src="{{ asset('assets/js/preloader_config.js') }}"></script>
+<script src="{{ asset('assets/js/preloader_config.js') }}"></script>
 
 </html>
