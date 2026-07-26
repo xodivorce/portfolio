@@ -20,7 +20,6 @@
   @php
 
     $cvTitle = 'Curriculum Vitae | @' . config('app.name');
-
     $cvDescription = 'Explore the CV: cv@' . config('app.name') . ' - A Detailed Look at the Skills, Experience, and Education.';
 
   @endphp
@@ -41,6 +40,27 @@
   <meta property="og:url" content="{{ url()->current() }}">
   <meta property="og:type" content="website">
 
+  <meta property="og:site_name" content="xodivorce">
+  <meta property="og:locale" content="en_US">
+
+  <!--
+    - #X (Twitter) Card Meta Tags
+  -->
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ $cvTitle }}">
+  <meta name="twitter:description" content="{{ $cvDescription }}">
+  <meta name="twitter:image" content="{{ asset('assets/images/user/xodivorce.jpg') }}">
+  <meta name="twitter:url" content="{{ url()->current() }}">
+  <meta name="twitter:creator" content="@hey_xodivorce">
+  <meta name="twitter:site" content="@hey_xodivorce">
+
+  <!--
+    - #Canonical URL
+  -->
+
+  <link rel="canonical" href="{{ url()->current() }}">
+
   <!--
     - #Favicon
   -->
@@ -50,7 +70,6 @@
   <link rel="shortcut icon" href="{{ asset('assets/favicon/favicon.ico') }}" />
   <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon/apple-touch-icon.png') }}" />
   <link rel="manifest" href="{{ asset('assets/favicon/site.webmanifest') }}" />
-  <link rel="icon" href="{{ asset('favicon.ico') }}">
 
   <!--
     - #StyleSheet

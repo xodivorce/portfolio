@@ -37,7 +37,6 @@ return [
     'education' => [
 
         'Camellia Institute of Technology',
-
         'Kingston Polytechnic College',
 
     ],
@@ -45,9 +44,7 @@ return [
     'website' => [
 
         'name' => 'Prasid Mandal | xodivorce',
-
         'description' => 'Official portfolio of Prasid Mandal (@xodivorce), a Full-Stack Web Developer and Android Developer building modern web applications, AI-powered software, and open-source projects.',
-
         'language' => 'en',
 
     ],

@@ -20,7 +20,6 @@
     @php
 
         $currentPage = $page ?? 'about';
-
         $titles = [
             'about' => 'Portfolio',
             'resume' => 'Resume',
@@ -28,7 +27,6 @@
             'blog' => 'Blog',
             'contact' => 'Contact',
         ];
-
         $ogDescriptions = [
             'about' => 'Official Portfolio Website of Prasid Mandal - Full-Stack Web Developer - (Also Known as @' . config('app.name') . ').',
             'resume' => 'Explore the Resume: cv@' . config('app.name') . ' - A Quick Look at My Education, Experience, and Skills.',
@@ -36,7 +34,6 @@
             'blog' => 'Read the Blogs Shared by ' . config('app.name') . ' on Social Media, Development and Tech.',
             'contact' => 'Get in Touch with ' . config('app.name') . ' - for Collaborations, Projects, or Queries.',
         ];
-
         $homeTitle = $titles[$currentPage] . ' | @' . config('app.name');
 
     @endphp
@@ -56,6 +53,27 @@
     <meta property="og:image" content="{{ asset('assets/images/user/xodivorce.jpg') }}">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="xodivorce">
+    <meta property="og:locale" content="en_US">
+
+    <!--
+    - #X (Twitter) Card Meta Tags
+  -->
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $homeTitle }}">
+    <meta name="twitter:description" content="{{ $ogDescriptions[$currentPage] }}">
+    <meta name="twitter:image" content="{{ asset('assets/images/user/xodivorce.jpg') }}">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:creator" content="@hey_xodivorce">
+    <meta name="twitter:site" content="@hey_xodivorce">
+
+    <!--
+    - #Canonical URL
+  -->
+
+    <link rel="canonical" href="{{ url()->current() }}">
 
     <!--
     - #Favicon

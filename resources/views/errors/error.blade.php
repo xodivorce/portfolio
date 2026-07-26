@@ -20,7 +20,6 @@
     @php
 
         $errorTitle = $message . ' | @' . config('app.name');
-
         $errorDescription = $message . ' — Sorry About That. Feel Free to Head Back to the Homepage of @' . config('app.name') . '.';
 
     @endphp
@@ -40,6 +39,29 @@
     <meta property="og:image" content="{{ asset('assets/images/user/xodivorce.jpg') }}">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="xodivorce">
+    <meta property="og:locale" content="en_US">
+    
+    <meta name="robots" content="noindex, follow">
+
+    <!--
+    - #X (Twitter) Card Meta Tags
+  -->
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $errorTitle }}">
+    <meta name="twitter:description" content="{{ $errorDescription }}">
+    <meta name="twitter:image" content="{{ asset('assets/images/user/xodivorce.jpg') }}">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:creator" content="@hey_xodivorce">
+    <meta name="twitter:site" content="@hey_xodivorce">
+
+    <!--
+    - #Canonical URL
+  -->
+
+    <link rel="canonical" href="{{ url()->current() }}">
 
     <!--
     - #Favicon
